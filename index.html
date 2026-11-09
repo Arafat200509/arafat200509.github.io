@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arafat Rahaman | Chemical Engineer — Research, Operations &amp; Commercial Portfolio</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Lora:ital,wght@0,500;0,600;0,700;1,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Lora', 'Georgia', 'serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            oxford: {
+              50: '#f4f7fb',
+              100: '#e8eff7',
+              200: '#cbdceb',
+              700: '#1e3a5f',
+              800: '#132844',
+              900: '#0b192c',
+              950: '#060e1a'
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    .font-academic {
+      font-family: 'Lora', Georgia, serif;
+    }
+    .glass-panel {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #cv-print-area, #cv-print-area * {
+        visibility: visible;
+      }
+      #cv-print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: #ffffff !important;
+        color: #111827 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- Toast Notification -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 pointer-events-none flex flex-col gap-2"></div>
+
+  <!-- Top Academic & Commercial Lens Banner -->
+  <div class="bg-oxford-900 text-slate-200 border-b border-slate-800 text-xs no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-medium text-slate-300">Portfolio View Lens:</span>
+        <span id="active-lens-label" class="text-emerald-300 font-semibold">Unified Portfolio (Academic + Industrial + Commercial)</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-1.5" role="group" aria-label="Portfolio Focus Switcher">
+        <button type="button" data-lens="unified" class="lens-btn px-2.5 py-1 rounded-md font-medium transition-all bg-emerald-600 text-white shadow-sm">Unified (All)</button>
+        <button type="button" data-lens="research" class="lens-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-800/80 text-slate-300 hover:bg-slate-700">Academic &amp; R&amp;D</button>
+        <button type="button" data-lens="industrial" class="lens-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-800/80 text-slate-300 hover:bg-slate-700">Operations &amp; HSE</button>
+        <button type="button" data-lens="commercial" class="lens-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-800/80 text-slate-300 hover:bg-slate-700">Commercial &amp; MTO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Main Navigation -->
+  <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 glass-panel border-b border-slate-200/80 dark:border-slate-800/80 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+      <a href="#overview" class="flex items-center gap-3 group focus:outline-none">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-oxford-800 via-teal-700 to-emerald-600 flex items-center justify-center text-white font-academic font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
+          AR
+        </div>
+        <div>
+          <span class="font-academic font-bold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white block leading-none">Arafat Rahaman</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-medium block mt-0.5">B.Sc. Chemical Engineering • JUST</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#overview" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Overview</a>
+        <a href="#research-projects" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Research &amp; Projects</a>
+        <a href="#experience" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Experience &amp; Education</a>
+        <a href="#credentials" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Skills &amp; Credentials</a>
+        <a href="#references" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">References</a>
+        <a href="#contact" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2">
+        <button type="button" id="open-cv-btn" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-oxford-800 hover:bg-oxford-700 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white shadow-sm transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>Printable CV</span>
+        </button>
+
+        <button type="button" id="theme-toggle-btn" aria-label="Toggle color theme" class="p-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <svg id="theme-icon-dark" class="w-5 h-5 hidden dark:block text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg id="theme-icon-light" class="w-5 h-5 block dark:hidden text-oxford-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+
+        <button type="button" id="mobile-menu-btn" aria-label="Open navigation menu" class="md:hidden p-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3 space-y-1 text-sm font-medium">
+      <a href="#overview" class="mobile-nav-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Overview</a>
+      <a href="#research-projects" class="mobile-nav-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Research &amp; Projects</a>
+      <a href="#experience" class="mobile-nav-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Experience &amp; Education</a>
+      <a href="#credentials" class="mobile-nav-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Skills &amp; Credentials</a>
+      <a href="#references" class="mobile-nav-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">References</a>
+      <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+    </div>
+  </header>
+
+  <main class="no-print">
+    <!-- Hero Section -->
+    <section id="overview" class="relative overflow-hidden pt-8 pb-14 lg:pt-14 lg:pb-20 border-b border-slate-200/80 dark:border-slate-800/80 bg-gradient-to-b from-white via-slate-50 to-slate-100/70 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          
+          <!-- Left Column: Bio & Positioning -->
+          <div class="lg:col-span-7 space-y-5">
+            <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full bg-oxford-50 dark:bg-slate-800/90 border border-oxford-200 dark:border-slate-700 text-oxford-800 dark:text-emerald-300 text-xs font-semibold">
+              <span class="px-2 py-0.5 rounded-full bg-emerald-600 text-white">Top 10% Cohort</span>
+              <span id="hero-badge-text">Chemical Engineer • Electrocatalysis R&amp;D • Process Operations &amp; HSE</span>
+            </div>
+
+            <h1 class="font-academic text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
+              Arafat Rahaman
+              <span id="hero-subtitle" class="block text-xl sm:text-2xl lg:text-3xl font-sans font-semibold text-teal-700 dark:text-emerald-400 mt-2">
+                Bridging Molecular Catalysis, Industrial Process Control &amp; Commercial Scale-Up
+              </span>
+            </h1>
+
+            <p id="hero-description" class="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+              Chemical Engineering graduate from <strong class="font-semibold text-slate-900 dark:text-white">Jashore University of Science and Technology (JUST)</strong> (CGPA 3.51/4.00) uniting laboratory innovation in <strong class="font-semibold text-slate-900 dark:text-white">Mo-MOF bifunctional electrocatalysts &amp; solid-state batteries</strong> with pilot-scale unit operations at <strong class="font-semibold text-slate-900 dark:text-white">TICI</strong>, accredited <strong class="font-semibold text-slate-900 dark:text-white">ISO 45001 / HSE / 5S</strong> compliance, and cost-focused commercial engineering.
+            </p>
+
+            <!-- Quick Contact Bar -->
+            <div class="flex flex-wrap items-center gap-2.5 pt-1 text-xs sm:text-sm">
+              <button type="button" data-copy="arafat.che12@gmail.com" class="copy-trigger inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-emerald-500 dark:hover:border-emerald-500 shadow-sm transition-all">
+                <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <span>arafat.che12@gmail.com</span>
+                <span class="text-[11px] text-slate-400">(Copy)</span>
+              </button>
+
+              <button type="button" data-copy="+880 1316-077961" class="copy-trigger inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-emerald-500 dark:hover:border-emerald-500 shadow-sm transition-all">
+                <svg class="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span>+880 1316-077961</span>
+                <span class="text-[11px] text-slate-400">(Copy)</span>
+              </button>
+
+              <a href="https://www.linkedin.com/in/arafat-rahaman-1502002a0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-blue-500 shadow-sm transition-all">
+                <svg class="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                <span>LinkedIn Profile</span>
+              </a>
+
+              <span class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400">
+                <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span>Jashore / Dhaka, Bangladesh</span>
+              </span>
+            </div>
+
+            <!-- Primary CTA Row -->
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a href="#research-projects" class="px-5 py-2.5 rounded-xl font-semibold text-sm bg-oxford-800 hover:bg-oxford-700 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white shadow-md transition-all">
+                Explore Research &amp; Engineering Work
+              </a>
+              <button type="button" id="hero-cv-btn" class="px-5 py-2.5 rounded-xl font-semibold text-sm bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 shadow-sm transition-all">
+                Open Tailored CV Viewer
+              </button>
+              <a href="#contact" class="px-4 py-2.5 rounded-xl font-semibold text-sm text-teal-700 dark:text-emerald-400 hover:underline">
+                Get in Touch &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Visual Card + Live Highlight Switcher -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800 bg-slate-900">
+              <img src="assets/hero_clean_energy_plant.jpg" alt="Molecular Metal-Organic Framework lattice transitioning into industrial clean energy and process plant" class="w-full h-64 sm:h-72 object-cover max-w-full" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-transparent"></div>
+              <div class="relative p-5 bg-slate-950/90 text-white border-t border-slate-800">
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">Core Profile Pillars</span>
+                  <span class="text-xs text-slate-400">B.Sc. ChE (2022–2026)</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2 text-center">
+                  <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                    <div class="text-xs text-slate-400">Academic R&amp;D</div>
+                    <div class="text-sm font-bold text-emerald-400 mt-0.5">Mo-MOF &amp; Na-Ion</div>
+                    <div class="text-[11px] text-slate-400 mt-0.5">120+ Datasets</div>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                    <div class="text-xs text-slate-400">Plant &amp; HSE</div>
+                    <div class="text-sm font-bold text-sky-400 mt-0.5">TICI &amp; ISO 45001</div>
+                    <div class="text-[11px] text-slate-400 mt-0.5">A+ Pilot Ops</div>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                    <div class="text-xs text-slate-400">Commercial</div>
+                    <div class="text-sm font-bold text-amber-400 mt-0.5">-80% Cost Route</div>
+                    <div class="text-[11px] text-slate-400 mt-0.5">1st Place Winner</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Quantitative Impact Bar -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+          <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Catalyst Economics</span>
+              <span class="px-2 py-0.5 text-[11px] rounded-md bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-mono">Thesis + Award</span>
+            </div>
+            <div class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-2">80% Lower</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Projected raw material cost for Mo-MOF/P@NiCo-LDH/NF vs. conventional noble-metal electrocatalysts.</p>
+          </div>
+
+          <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-400">Water Splitting Kinetics</span>
+              <span class="px-2 py-0.5 text-[11px] rounded-md bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 font-mono">100 h @ 1.58 V</span>
+            </div>
+            <div class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-2">92 / 106 mV</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Low HER/OER overpotentials with 97% chronoamperometric stability over 100 hours of continuous operation.</p>
+          </div>
+
+          <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400">Lab &amp; Pilot Execution</span>
+              <span class="px-2 py-0.5 text-[11px] rounded-md bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 font-mono">NAME Lab &amp; TICI</span>
+            </div>
+            <div class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-2">50+ Batches</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Synthesized across 5 concurrent setups alongside 120+ electrochemical datasets and 4 pilot-scale unit operations.</p>
+          </div>
+
+          <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-400">Academic &amp; Honors</span>
+              <span class="px-2 py-0.5 text-[11px] rounded-md bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 font-mono">JUST • June 2025</span>
+            </div>
+            <div class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-2">1st Place</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Research Idea Contest winner (out of 7 projects) at the 3rd International Seminar on Frontiers in ChE &amp; Leadership.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research, Operations & Commercial Projects Section -->
+    <section id="research-projects" class="py-14 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Portfolio &amp; Case Studies</span>
+          <h2 class="font-academic text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Research, Process Operations &amp; Commercial Projects</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Filter by domain or click any project card to inspect methodology, instrumentation, and quantitative outcomes.</p>
+        </div>
+
+        <!-- Project Category Filter Tabs -->
+        <div class="flex flex-wrap gap-1.5 bg-slate-200/70 dark:bg-slate-800/80 p-1 rounded-xl self-start" role="tablist" aria-label="Project category filter">
+          <button type="button" data-proj-filter="all" class="proj-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-sm">All Projects (4)</button>
+          <button type="button" data-proj-filter="research" class="proj-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900">Academic &amp; R&amp;D (2)</button>
+          <button type="button" data-proj-filter="industrial" class="proj-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900">Operations &amp; HSE (1)</button>
+          <button type="button" data-proj-filter="commercial" class="proj-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900">Commercial &amp; Scale-Up (1)</button>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Project 1: Undergraduate Thesis -->
+        <article data-category="research" class="project-card group rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="relative h-48 overflow-hidden bg-slate-900">
+            <img src="assets/mo_mof_electrocatalyst.jpg" alt="Porous nickel foam electrode with Mo-MOF and NiCo-LDH nanostructures during electrochemical water splitting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 max-w-full" />
+            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-600/95 text-white shadow">Academic R&amp;D • B.Sc. Thesis</span>
+              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-slate-900/85 text-emerald-300">2025 – 2026</span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-2.5">
+              <div class="text-xs font-medium text-slate-500 dark:text-slate-400">NAME Lab, JUST • Advisor: Dr. Md. Rafiul Hasan</div>
+              <h3 class="font-academic text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug">
+                Design and Fabrication of Mo-MOF Based Bifunctional Electrocatalysts for Efficient Overall Water Splitting
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Synthesized novel <code class="text-xs font-mono bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">Mo-MOF/P@NiCo-LDH/NF</code> heterostructures via solvothermal and hydrothermal crystallization on nickel foam and carbon cloth substrates, achieving low HER/OER overpotentials (92/106 mV) and 97% retention over 100 hours at 1.58 V.
+              </p>
+            </div>
+            <div class="space-y-3 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">LSV / CV / EIS</span>
+                <span class="px-2 py-0.5 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Tafel Kinetics</span>
+                <span class="px-2 py-0.5 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">XRD • FTIR • SEM/EDX</span>
+                <span class="px-2 py-0.5 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">OriginLab Fitting</span>
+              </div>
+              <button type="button" data-project-id="thesis" class="open-project-modal w-full py-2 px-3 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-emerald-600 hover:text-white dark:bg-slate-800 dark:hover:bg-emerald-600 text-slate-800 dark:text-slate-200 transition-colors flex items-center justify-center gap-1.5">
+                <span>View Experimental Protocol, Kinetics &amp; Manuscript Details</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Industrial Process Control & Scale-Up -->
+        <article data-category="industrial" class="project-card group rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="relative h-48 overflow-hidden bg-slate-900">
+            <img src="assets/tici_pilot_plant.jpg" alt="Industrial chemical pilot plant with continuous reactors, distillation columns, and heat exchangers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 max-w-full" />
+            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-sky-600/95 text-white shadow">Operations &amp; HSE • Pilot Plant</span>
+              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-slate-900/85 text-sky-300">Aug – Sep 2025</span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-2.5">
+              <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Training Institute for Chemical Industries (TICI), Narsingdi</div>
+              <h3 class="font-academic text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug">
+                Pilot-Scale Unit Operations, Process Control &amp; Bench-to-Industrial Scale-Up
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Operated and monitored 4 pilot-scale chemical plant units—continuous reactors, distillation columns, and shell-and-tube heat exchangers—tracking 7 critical control parameters (temperature, pressure, flow rate, level, and process validation) under strict ISO 45001 and SOP compliance.
+              </p>
+            </div>
+            <div class="space-y-3 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">4 Pilot Unit Ops</span>
+                <span class="px-2 py-0.5 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">ISO 45001 &amp; 5S</span>
+                <span class="px-2 py-0.5 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Process Validation</span>
+                <span class="px-2 py-0.5 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Grade: A+</span>
+              </div>
+              <button type="button" data-project-id="tici" class="open-project-modal w-full py-2 px-3 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-sky-600 hover:text-white dark:bg-slate-800 dark:hover:bg-sky-600 text-slate-800 dark:text-slate-200 transition-colors flex items-center justify-center gap-1.5">
+                <span>View Unit Operations &amp; Safety Compliance Breakdown</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Solid-State Sodium-Ion Batteries -->
+        <article data-category="research" class="project-card group rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-teal-100 dark:bg-teal-950/80 text-teal-800 dark:text-teal-300">Energy Storage Research</span>
+                <span class="text-xs font-mono text-slate-500">2026</span>
+              </div>
+              <h3 class="font-academic text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug">
+                Solid-State Sodium-Ion Batteries for Grid-Scale Storage: Materials Selection &amp; Interface Bottlenecks
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Evaluated performance trade-offs across cathode chemistries (<code class="text-xs font-mono bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded">Na3V2(PO4)3</code> NVP and Prussian blue analogues), doped NASICON-type solid electrolytes, and hard carbon anodes, formulating a targeted research proposal on stabilizing solid-electrolyte interphases (SEI) against dendrite propagation at ambient temperatures.
+              </p>
+            </div>
+            <div class="space-y-3 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">NASICON Electrolytes</span>
+                <span class="px-2 py-0.5 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">NVP &amp; Prussian Blue</span>
+                <span class="px-2 py-0.5 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">SEI &amp; Dendrite Mitigation</span>
+              </div>
+              <button type="button" data-project-id="sodium" class="open-project-modal w-full py-2 px-3 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-teal-600 hover:text-white dark:bg-slate-800 dark:hover:bg-teal-600 text-slate-800 dark:text-slate-200 transition-colors flex items-center justify-center gap-1.5">
+                <span>View Materials Trade-Off Matrix &amp; SEI Proposal</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Commercial & Process Innovation Winner -->
+        <article data-category="commercial" class="project-card group rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300">Commercial &amp; Process Innovation • 1st Place</span>
+                <span class="text-xs font-mono text-slate-500">June 2025</span>
+              </div>
+              <h3 class="font-academic text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug">
+                Scalable, Non-Noble Electrocatalyst Manufacturing Route &amp; Techno-Economic Strategy
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Awarded <strong class="font-semibold text-slate-900 dark:text-white">1st Position (out of 7 competing projects)</strong> at the 3rd International Seminar on Frontiers in Chemical Engineering &amp; Leadership Management (JUST). Engineered an earth-abundant raw material sourcing and batch synthesis strategy that reduced projected catalyst manufacturing cost by 80%.
+              </p>
+            </div>
+            <div class="space-y-3 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Techno-Economic Analysis</span>
+                <span class="px-2 py-0.5 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Raw Material Sourcing</span>
+                <span class="px-2 py-0.5 text-xs rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Commercial Feasibility</span>
+              </div>
+              <button type="button" data-project-id="commercial" class="open-project-modal w-full py-2 px-3 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-amber-600 hover:text-white dark:bg-slate-800 dark:hover:bg-amber-600 text-slate-800 dark:text-slate-200 transition-colors flex items-center justify-center gap-1.5">
+                <span>View Techno-Economic &amp; Commercialization Summary</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Interactive Benchmark Explorer: Catalyst & Process Metrics -->
+      <div class="mt-10 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-slate-100 dark:border-slate-800">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold">Interactive Data Explorer</span>
+            <h3 class="font-academic text-xl font-bold text-slate-900 dark:text-white mt-0.5">
+              Mo-MOF/P@NiCo-LDH/NF Catalyst Benchmark (Academic Kinetics vs. Commercial Cost)
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+              Toggle between electrochemical activity, 100-hour operational durability, and relative raw-material cost index from thesis characterization data.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5" role="group" aria-label="Benchmark Metric Selector">
+            <button type="button" data-metric="overpotential" class="metric-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-oxford-800 text-white dark:bg-emerald-600">HER / OER Overpotential (mV)</button>
+            <button type="button" data-metric="stability" class="metric-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">100h Stability Retention (%)</button>
+            <button type="button" data-metric="cost" class="metric-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Relative Material Cost Index</button>
+          </div>
+        </div>
+
+        <div id="benchmark-bars" class="mt-5 space-y-4">
+          <!-- Dynamically populated by JS -->
+        </div>
+
+        <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <span><strong>Manuscript in Preparation:</strong> Rahaman, A., &amp; Hasan, M. R. <em>"Mo-MOF and Transition Metal Layered Double Hydroxide Heterostructures as Highly Efficient Bifunctional Electrocatalysts for Overall Water Splitting"</em> (Target submission: 2026).</span>
+          <span class="font-mono text-emerald-700 dark:text-emerald-400">Full Cell Voltage: 1.58 V</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience, Education & Leadership Section -->
+    <section id="experience" class="py-14 lg:py-20 bg-slate-100/70 dark:bg-slate-900/50 border-y border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-emerald-400">Career &amp; Academic Journey</span>
+            <h2 class="font-academic text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Experience, Education &amp; Campus Leadership</h2>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 bg-white dark:bg-slate-800 p-1 rounded-xl border border-slate-200 dark:border-slate-700 self-start">
+            <button type="button" data-timeline-filter="all" class="timeline-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-oxford-800 text-white dark:bg-emerald-600">All (7)</button>
+            <button type="button" data-timeline-filter="work" class="timeline-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300">Research &amp; Industry (2)</button>
+            <button type="button" data-timeline-filter="education" class="timeline-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300">Education (2)</button>
+            <button type="button" data-timeline-filter="leadership" class="timeline-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300">Leadership (3)</button>
+          </div>
+        </div>
+
+        <div id="timeline-list" class="space-y-4">
+          <!-- Item 1: Undergraduate Research Assistant -->
+          <div data-tcat="work" class="timeline-item p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">Research &amp; Lab Operations</span>
+                <h3 class="font-academic text-lg font-bold text-slate-900 dark:text-white">Undergraduate Research Assistant &amp; Thesis Researcher</h3>
+              </div>
+              <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Jan 2025 – Apr 2026</span>
+            </div>
+            <div class="text-xs sm:text-sm font-medium text-teal-700 dark:text-emerald-400 mt-1">Laboratory of Nano-bio and Advanced Materials Engineering (NAME Lab), JUST • Jashore, Bangladesh</div>
+            <ul class="mt-3 space-y-1.5 text-sm text-slate-600 dark:text-slate-300 list-disc list-inside">
+              <li>Managed 5 concurrent experimental setups and completed over 50 hydrothermal/solvothermal material synthesis batches under strict laboratory safety and SOP standards.</li>
+              <li>Analyzed over 120 electrochemical datasets (LSV, CV, Tafel slope, EIS charge-transfer fitting, ECSA, and 100-hour chronoamperometry) in OriginLab and Excel.</li>
+              <li>Correlated catalytic HER/OER performance with phase, functional group, and surface morphology data from XRD, FTIR, and SEM/EDX.</li>
+            </ul>
+          </div>
+
+          <!-- Item 2: TICI Industrial Internship -->
+          <div data-tcat="work" class="timeline-item p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-sky-100 dark:bg-sky-950 text-sky-800 dark:text-sky-300">Industrial Internship</span>
+                <h3 class="font-academic text-lg font-bold text-slate-900 dark:text-white">Process Control Trainee</h3>
+              </div>
+              <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Aug 2025 – Sep 2025</span>
+            </div>
+            <div class="text-xs sm:text-sm font-medium text-sky-700 dark:text-sky-400 mt-1">Training Institute for Chemical Industries (TICI) • Narsingdi, Bangladesh</div>
+            <ul class="mt-3 space-y-1.5 text-sm text-slate-600 dark:text-slate-300 list-disc list-inside">
+              <li>Operated and monitored 4 pilot-scale unit operations (continuous reactors, distillation columns, heat exchangers) in compliance with ISO 45001 safety and ISO 9000 quality standards.</li>
+              <li>Executed bench-to-industrial scale-up simulations and logged 7 critical process control parameters for operational troubleshooting and validation, earning an <strong>A+ grade</strong>.</li>
+            </ul>
+          </div>
+
+          <!-- Item 3: B.Sc. in Chemical Engineering -->
+          <div data-tcat="education" class="timeline-item p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-300">University Degree</span>
+                <h3 class="font-academic text-lg font-bold text-slate-900 dark:text-white">Bachelor of Science (B.Sc.) in Chemical Engineering</h3>
+              </div>
+              <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Feb 2022 – Feb 2026</span>
+            </div>
+            <div class="text-xs sm:text-sm font-medium text-indigo-700 dark:text-indigo-400 mt-1">Jashore University of Science and Technology (JUST) • CGPA: 3.51 / 4.00 (Top 10% of Cohort)</div>
+            <p class="mt-2.5 text-sm text-slate-600 dark:text-slate-300">
+              <strong>Recipient of Merit-Based Undergraduate Scholarship (2022–2026).</strong> Core coursework: Electrochemical Engineering, Chemical Reaction Engineering, Materials Science &amp; Engineering, Transport Phenomena, Unit Operations, Process Control, and Analytical/Physical Chemistry.
+            </p>
+          </div>
+
+          <!-- Item 4: HSC -->
+          <div data-tcat="education" class="timeline-item p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-300">Higher Secondary</span>
+                <h3 class="font-academic text-lg font-bold text-slate-900 dark:text-white">Higher Secondary Certificate (HSC) — Science</h3>
+              </div>
+              <span class="text-xs font-mono text-slate-500 dark:text-slate-400">2018 – 2020</span>
+            </div>
+            <div class="text-xs sm:text-sm font-medium text-indigo-700 dark:text-indigo-400 mt-1">Govt. Michael Madhusudan College, Jashore • GPA: 5.00 / 5.00</div>
+          </div>
+
+          <!-- Item 5: Assistant Class Representative -->
+          <div data-tcat="leadership" class="timeline-item p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300">Academic Leadership</span>
+                <h3 class="font-academic text-lg font-bold text-slate-900 dark:text-white">Assistant Class Representative (ACR)</h3>
+              </div>
+              <span class="text-xs font-mono text-slate-500 dark:text-slate-400">2025 – 2026</span>
+            </div>
+            <div class="text-xs sm:text-sm font-medium text-amber-700 dark:text-amber-400 mt-1">Department of Chemical Engineering, JUST</div>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Coordinated academic schedules, laboratory sessions, and faculty-student communication across the undergraduate cohort.</p>
+          </div>
+
+          <!-- Item 6: Football Team Captain -->
+          <div data-tcat="leadership" class="timeline-item p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300">Athletics &amp; Team Management</span>
+                <h3 class="font-academic text-lg font-bold text-slate-900 dark:text-white">Team Captain — Department Football Club</h3>
+              </div>
+              <span class="text-xs font-mono text-slate-500 dark:text-slate-400">2024 – 2026</span>
+            </div>
+            <div class="text-xs sm:text-sm font-medium text-amber-700 dark:text-amber-400 mt-1">Department of Chemical Engineering, JUST</div>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Led squad selection, training regimens, and tactical coordination in inter-departmental university tournaments.</p>
+          </div>
+
+          <!-- Item 7: Anti-Ragging Society -->
+          <div data-tcat="leadership" class="timeline-item p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300">Campus Welfare</span>
+                <h3 class="font-academic text-lg font-bold text-slate-900 dark:text-white">Executive Member — Anti-Ragging Society</h3>
+              </div>
+              <span class="text-xs font-mono text-slate-500 dark:text-slate-400">2024 – 2025</span>
+            </div>
+            <div class="text-xs sm:text-sm font-medium text-amber-700 dark:text-amber-400 mt-1">Jashore University of Science and Technology (JUST)</div>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Partnered with university administration to lead freshman orientation campaigns and maintain a safe, inclusive campus environment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Verified Credentials Section -->
+    <section id="credentials" class="py-14 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <span class="text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Technical Arsenal &amp; Accreditations</span>
+        <h2 class="font-academic text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Core Competencies &amp; Verified Certifications</h2>
+      </div>
+
+      <!-- 3-Pillar Technical Competency Matrix -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 flex items-center justify-center font-bold mb-4">01</div>
+          <h3 class="font-academic text-lg font-bold text-slate-900 dark:text-white">Electrochemistry &amp; Materials R&amp;D</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-4">Synthesis, characterization &amp; kinetic modeling</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300">LSV, CV &amp; EIS</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300">Tafel Kinetics &amp; ECSA</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300">Chronoamperometry</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300">Hydrothermal / Solvothermal MOF &amp; LDH Synthesis</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300">XRD, FTIR &amp; SEM/EDX Analysis</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300">Three-Electrode Cell Fabrication</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-400 flex items-center justify-center font-bold mb-4">02</div>
+          <h3 class="font-academic text-lg font-bold text-slate-900 dark:text-white">Process Operations, QA/QC &amp; HSE</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-4">Plant unit operations, safety &amp; quality compliance</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-sky-50 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300">Continuous Reactors &amp; Distillation</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-sky-50 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300">Heat Exchanger Networks</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-sky-50 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300">ISO 45001 Occupational Health &amp; Safety</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-sky-50 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300">5S Workplace Standardization</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-sky-50 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300">SOPs, cGMP &amp; SDS/MSDS</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-sky-50 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300">Root-Cause Troubleshooting</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold mb-4">03</div>
+          <h3 class="font-academic text-lg font-bold text-slate-900 dark:text-white">Commercial, Data &amp; Software Tools</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-4">Technical sales, analytics &amp; scientific computing</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300">OriginLab (Peak &amp; EIS Fitting)</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300">Python Scientific Visualization</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300">Advanced MS Excel (Pivot Tables, Modeling)</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300">ChemDraw</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300">Technical Sales &amp; Chemical Sourcing</span>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300">Techno-Economic Assessment</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Verified Certifications Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span class="font-semibold text-emerald-700 dark:text-emerald-400">Arizona State University</span>
+              <span>Aug 2026</span>
+            </div>
+            <h4 class="font-bold text-slate-900 dark:text-white mt-1">Battery Technologies Specialization</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Battery chemistries, cell design, degradation mechanisms, and battery management systems.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+            <span class="font-mono text-slate-500">ID: CNSSHT4Z12EV</span>
+            <button type="button" data-copy="CNSSHT4Z12EV" class="copy-trigger text-emerald-600 dark:text-emerald-400 font-semibold hover:underline">Copy ID</button>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span class="font-semibold text-sky-700 dark:text-sky-400">Khalifa University</span>
+              <span>Aug 2026</span>
+            </div>
+            <h4 class="font-bold text-slate-900 dark:text-white mt-1">Health, Safety &amp; Environmental (HSE) Engineering</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Industrial hazard identification, chemical process safety, and environmental risk assessment.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+            <span class="font-mono text-slate-500">ID: QXRII2I5RIQR</span>
+            <button type="button" data-copy="QXRII2I5RIQR" class="copy-trigger text-emerald-600 dark:text-emerald-400 font-semibold hover:underline">Copy ID</button>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span class="font-semibold text-amber-700 dark:text-amber-400">AIGPE™ (CPD &amp; PMI Accredited)</span>
+              <span>Oct 2026</span>
+            </div>
+            <h4 class="font-bold text-slate-900 dark:text-white mt-1">AIGPE™ Certified 5S Specialist</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Shop-floor visual management, lean process standardization, and waste elimination.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+            <span class="font-mono text-slate-500">ID: 56977272597623</span>
+            <button type="button" data-copy="56977272597623" class="copy-trigger text-emerald-600 dark:text-emerald-400 font-semibold hover:underline">Copy ID</button>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span class="font-semibold text-sky-700 dark:text-sky-400">Packt</span>
+              <span>Jul 2026</span>
+            </div>
+            <h4 class="font-bold text-slate-900 dark:text-white mt-1">ISO 45001 Occupational Health &amp; Safety Management</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Safety framework implementation, risk mitigation, and regulatory workplace compliance.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+            <span class="font-mono text-slate-500">ID: YIBWEQFBTA4Q</span>
+            <button type="button" data-copy="YIBWEQFBTA4Q" class="copy-trigger text-emerald-600 dark:text-emerald-400 font-semibold hover:underline">Copy ID</button>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span class="font-semibold text-emerald-700 dark:text-emerald-400">L&amp;T EduTech</span>
+              <span>Jun 2026</span>
+            </div>
+            <h4 class="font-bold text-slate-900 dark:text-white mt-1">Next-Gen Energy Storage: Battery &amp; Hydrogen Tech</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Green hydrogen generation, fuel cells, water splitting systems, and grid-scale storage.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+            <span class="font-mono text-slate-500">ID: BRELEQOVWV00</span>
+            <button type="button" data-copy="BRELEQOVWV00" class="copy-trigger text-emerald-600 dark:text-emerald-400 font-semibold hover:underline">Copy ID</button>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span class="font-semibold text-indigo-700 dark:text-indigo-400">TICI Bangladesh &amp; Google</span>
+              <span>2025 – 2026</span>
+            </div>
+            <h4 class="font-bold text-slate-900 dark:text-white mt-1">Industrial Process Control (TICI) &amp; AI for Research (Google)</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Hands-on pilot-scale plant operation (A+ Grade, Sep 2025) and AI-assisted scientific literature &amp; kinetic analysis (Jun 2026).</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+            <span class="font-mono text-emerald-600 dark:text-emerald-400">Verified Credentials</span>
+            <span class="text-slate-400">Sep 2025 / Jun 2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academic References Section -->
+    <section id="references" class="py-14 lg:py-16 bg-slate-100/70 dark:bg-slate-900/50 border-t border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+          <span class="text-xs font-semibold uppercase tracking-wider text-oxford-700 dark:text-emerald-400">Faculty Endorsements</span>
+          <h2 class="font-academic text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Academic References</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Senior faculty supervisors at the Department of Chemical Engineering, Jashore University of Science and Technology (JUST).</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Reference 1 -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="inline-block px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 mb-3">
+                Undergraduate Thesis Supervisor
+              </div>
+              <h3 class="font-academic text-xl font-bold text-slate-900 dark:text-white">Dr. Md. Rafiul Hasan</h3>
+              <p class="text-sm font-medium text-slate-700 dark:text-slate-300 mt-1">Associate Professor, Department of Chemical Engineering</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Jashore University of Science and Technology (JUST), Bangladesh</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+              <span class="font-mono text-slate-700 dark:text-slate-300">rafiul.che@just.edu.bd</span>
+              <div class="flex items-center gap-2">
+                <button type="button" data-copy="rafiul.che@just.edu.bd" class="copy-trigger px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-emerald-600 hover:text-white text-slate-700 dark:text-slate-300 font-medium transition-colors">Copy Email</button>
+                <a href="mailto:rafiul.che@just.edu.bd" class="px-3 py-1.5 rounded-lg bg-oxford-800 text-white dark:bg-emerald-600 font-medium hover:opacity-90 transition-opacity">Email</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reference 2 -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="inline-block px-2.5 py-1 rounded-full text-xs font-semibold bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-300 mb-3">
+                Department Chairman &amp; Academic Mentor
+              </div>
+              <h3 class="font-academic text-xl font-bold text-slate-900 dark:text-white">Dr. Md. Zaved Hossain Khan</h3>
+              <p class="text-sm font-medium text-slate-700 dark:text-slate-300 mt-1">Professor &amp; Chairman, Department of Chemical Engineering</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Jashore University of Science and Technology (JUST), Bangladesh</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+              <span class="font-mono text-slate-700 dark:text-slate-300">zaved.khan@yahoo.com</span>
+              <div class="flex items-center gap-2">
+                <button type="button" data-copy="zaved.khan@yahoo.com" class="copy-trigger px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-emerald-600 hover:text-white text-slate-700 dark:text-slate-300 font-medium transition-colors">Copy Email</button>
+                <a href="mailto:zaved.khan@yahoo.com" class="px-3 py-1.5 rounded-lg bg-oxford-800 text-white dark:bg-emerald-600 font-medium hover:opacity-90 transition-opacity">Email</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Direct Inquiry Composer Section -->
+    <section id="contact" class="py-14 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <!-- Left Contact Details -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Direct Channels</span>
+            <h2 class="font-academic text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">Let's Connect</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+              Available for graduate research positions (M.Sc./Ph.D. in electrocatalysis, clean energy, and advanced materials), industrial process/HSE engineering roles, and chemical business development opportunities.
+            </p>
+          </div>
+
+          <div class="space-y-3 text-sm">
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
+              <div>
+                <div class="text-xs text-slate-400">Primary Email</div>
+                <div class="font-medium text-slate-900 dark:text-white">arafat.che12@gmail.com</div>
+              </div>
+              <button type="button" data-copy="arafat.che12@gmail.com" class="copy-trigger px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-emerald-600 hover:text-white transition-colors">Copy</button>
+            </div>
+
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
+              <div>
+                <div class="text-xs text-slate-400">University Email</div>
+                <div class="font-medium text-slate-900 dark:text-white">200509.che@student.just.edu.bd</div>
+              </div>
+              <button type="button" data-copy="200509.che@student.just.edu.bd" class="copy-trigger px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-emerald-600 hover:text-white transition-colors">Copy</button>
+            </div>
+
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
+              <div>
+                <div class="text-xs text-slate-400">Phone / WhatsApp</div>
+                <div class="font-medium text-slate-900 dark:text-white">+880 1316-077961</div>
+              </div>
+              <button type="button" data-copy="+880 1316-077961" class="copy-trigger px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-emerald-600 hover:text-white transition-colors">Copy</button>
+            </div>
+
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
+              <div>
+                <div class="text-xs text-slate-400">LinkedIn</div>
+                <div class="font-medium text-slate-900 dark:text-white truncate">linkedin.com/in/arafat-rahaman-1502002a0</div>
+              </div>
+              <a href="https://www.linkedin.com/in/arafat-rahaman-1502002a0" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white hover:bg-blue-500 transition-colors">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Quick Inquiry Builder -->
+        <div class="lg:col-span-7">
+          <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <h3 class="font-academic text-xl font-bold text-slate-900 dark:text-white">Quick Inquiry &amp; Collaboration Composer</h3>
+            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">Select an inquiry topic to pre-fill a tailored message you can send via email or copy directly.</p>
+
+            <form id="contact-form" class="mt-5 space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="sender-name" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Your Name / Organization</label>
+                  <input id="sender-name" type="text" placeholder="e.g., Dr. Smith / Recruiting Team" class="w-full px-3.5 py-2 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-emerald-500" required />
+                </div>
+                <div>
+                  <label for="inquiry-track" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Inquiry Focus</label>
+                  <select id="inquiry-track" class="w-full px-3.5 py-2 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-emerald-500">
+                    <option value="Graduate Research / Lab Opportunity">Graduate Research / Lab Opportunity</option>
+                    <option value="Process / Production / HSE Engineering Role">Process / Production / HSE Engineering Role</option>
+                    <option value="Commercial / MTO / Business Development Role">Commercial / MTO / Business Development Role</option>
+                    <option value="General Networking & Collaboration">General Networking &amp; Collaboration</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="inquiry-message" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Message</label>
+                <textarea id="inquiry-message" rows="4" placeholder="Write your message or click a preset below..." class="w-full px-3.5 py-2 rounded-xl text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-emerald-500" required>Hi Arafat, I reviewed your Chemical Engineering portfolio and would love to connect regarding a potential opportunity with our team.</textarea>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-3 pt-1">
+                <button type="submit" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-oxford-800 hover:bg-oxford-700 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white shadow-sm transition-all">
+                  Open in Email Client
+                </button>
+                <button type="button" id="copy-inquiry-btn" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition-all">
+                  Copy Formatted Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-oxford-950 text-slate-400 py-8 border-t border-slate-800 text-xs no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="font-academic font-bold text-white text-sm">Arafat Rahaman</span> — B.Sc. in Chemical Engineering (JUST)
+      </div>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="#overview" class="hover:text-white transition-colors">Top</a>
+        <a href="#research-projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#credentials" class="hover:text-white transition-colors">Credentials</a>
+        <button type="button" id="footer-cv-btn" class="hover:text-emerald-400 transition-colors font-semibold">Printable CV Viewer</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Detail Modal -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden bg-slate-950/75 glass-panel flex items-center justify-center p-4 no-print" role="dialog" aria-modal="true" aria-labelledby="modal-proj-title">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 sm:p-8">
+      <div class="flex items-start justify-between gap-4 pb-4 border-b border-slate-100 dark:border-slate-800">
+        <div>
+          <span id="modal-proj-tag" class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">Project Detail</span>
+          <h3 id="modal-proj-title" class="font-academic text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-2"></h3>
+          <p id="modal-proj-meta" class="text-xs text-slate-500 dark:text-slate-400 mt-1"></p>
+        </div>
+        <button type="button" id="close-project-modal" aria-label="Close modal" class="p-2 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div id="modal-proj-body" class="mt-5 space-y-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></div>
+
+      <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+        <button type="button" id="close-project-modal-bottom" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-200">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Printable CV Viewer Modal -->
+  <div id="cv-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 glass-panel flex items-center justify-center p-3 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="cv-modal-heading">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-4xl w-full max-h-[92vh] flex flex-col shadow-2xl overflow-hidden">
+      
+      <!-- Modal Toolbar (Hidden when printing) -->
+      <div class="p-4 sm:px-6 bg-slate-100 dark:bg-slate-800/90 border-b border-slate-200 dark:border-slate-700 flex flex-wrap items-center justify-between gap-3 no-print">
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="cv-modal-heading" class="font-academic font-bold text-sm sm:text-base text-slate-900 dark:text-white mr-2">Interactive CV Viewer:</span>
+          <button type="button" data-cv-version="unified" class="cv-ver-btn px-3 py-1 rounded-lg text-xs font-semibold bg-oxford-800 text-white dark:bg-emerald-600">Unified CV</button>
+          <button type="button" data-cv-version="academic" class="cv-ver-btn px-3 py-1 rounded-lg text-xs font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300">Academic &amp; R&amp;D CV</button>
+          <button type="button" data-cv-version="industrial" class="cv-ver-btn px-3 py-1 rounded-lg text-xs font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300">Operations &amp; HSE CV</button>
+          <button type="button" data-cv-version="commercial" class="cv-ver-btn px-3 py-1 rounded-lg text-xs font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300">Commercial &amp; MTO CV</button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button type="button" id="copy-cv-text-btn" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50">
+            Copy Plain Text
+          </button>
+          <button type="button" id="print-cv-btn" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm">
+            Print / Save PDF
+          </button>
+          <button type="button" id="close-cv-modal" aria-label="Close CV Viewer" class="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 dark:hover:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Printable CV Sheet -->
+      <div class="p-6 sm:p-10 overflow-y-auto flex-1 bg-white text-slate-900" id="cv-print-area">
+        <div class="border-b-2 border-slate-900 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div>
+            <h2 class="font-academic text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">ARAFAT RAHAMAN</h2>
+            <p id="cv-sheet-subtitle" class="text-sm font-semibold text-teal-800 mt-0.5">B.Sc. in Chemical Engineering — Clean Energy Research, Process Operations &amp; Commercial Strategy</p>
+          </div>
+          <div class="text-xs text-slate-700 sm:text-right space-y-0.5 font-mono">
+            <div>arafat.che12@gmail.com | 200509.che@student.just.edu.bd</div>
+            <div>+880 1316-077961 | Jashore / Dhaka, Bangladesh</div>
+            <div>linkedin.com/in/arafat-rahaman-1502002a0</div>
+          </div>
+        </div>
+
+        <div id="cv-sheet-body" class="mt-5 space-y-5 text-xs sm:text-sm leading-relaxed text-slate-800">
+          <!-- Dynamically populated by JS based on selected CV version -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // --- State & Content Definitions ---
+    const LENS_DATA = {
+      unified: {
+        label: 'Unified Portfolio (Academic + Industrial + Commercial)',
+        badge: 'Chemical Engineer • Electrocatalysis R&D • Process Operations & HSE',
+        subtitle: 'Bridging Molecular Catalysis, Industrial Process Control & Commercial Scale-Up',
+        description: 'Chemical Engineering graduate from Jashore University of Science and Technology (JUST) (CGPA 3.51/4.00, Top 10%) uniting laboratory innovation in Mo-MOF bifunctional electrocatalysts & solid-state batteries with pilot-scale unit operations at TICI, accredited ISO 45001 / HSE / 5S compliance, and cost-focused commercial engineering.',
+        projFilter: 'all'
+      },
+      research: {
+        label: 'Academic & Clean Energy Research Focus',
+        badge: 'Academic Researcher • Electrocatalysis, Water Splitting & Solid-State Batteries',
+        subtitle: 'Designing Earth-Abundant Bifunctional Electrocatalysts & Next-Gen Energy Storage Interfaces',
+        description: 'B.Sc. Chemical Engineering researcher at NAME Lab (JUST, CGPA 3.51/4.00, Top 10%) specializing in hydrothermal/solvothermal synthesis of Mo-MOF/NiCo-LDH heterostructures, LSV/CV/EIS/Tafel kinetic modeling across 120+ datasets, and solid-state sodium-ion battery interface engineering.',
+        projFilter: 'research'
+      },
+      industrial: {
+        label: 'Industrial Process Operations & HSE Focus',
+        badge: 'Process & HSE Engineer • TICI Pilot Plant • ISO 45001 & 5S Specialist',
+        subtitle: 'Safe, Data-Driven Chemical Plant Operations, Process Control & Quality Compliance',
+        description: 'Safety-minded Chemical Engineering graduate trained on 4 pilot-scale unit operations at TICI (A+ Grade) and 50+ laboratory synthesis batches. Certified in ISO 45001, Khalifa University HSE Engineering, and AIGPE 5S workplace standardization.',
+        projFilter: 'industrial'
+      },
+      commercial: {
+        label: 'Commercial Engineering & Management Trainee (MTO) Focus',
+        badge: 'Chemical Business Development • Technical Sales, Sourcing & Cost Optimization',
+        subtitle: 'Translating Chemical Process Innovation into Scalable, Cost-Effective Commercial Solutions',
+        description: 'Award-winning Chemical Engineering graduate (1st Place in Industrial Process Innovation, JUST 2025) combining deep technical fluency in formulation and process engineering with commercial strategy, raw material sourcing, and client partnership building.',
+        projFilter: 'commercial'
+      }
+    };
+
+    const PROJECT_DETAILS = {
+      thesis: {
+        tag: 'Undergraduate Thesis • NAME Lab, JUST (2025–2026)',
+        title: 'Design and Fabrication of Mo-MOF Based Bifunctional Electrocatalysts for Efficient Overall Water Splitting',
+        meta: 'Advisor: Dr. Md. Rafiul Hasan (Associate Professor, Dept. of Chemical Engineering, JUST)',
+        body: `
+          <p><strong>Objective:</strong> Replace expensive noble-metal catalysts (Pt/C and RuO2) with an earth-abundant, durable bifunctional electrocatalyst capable of driving both the Hydrogen Evolution Reaction (HER) and Oxygen Evolution Reaction (OER) in alkaline media.</p>
+          <ul class="list-disc list-inside space-y-1.5 mt-2">
+            <li><strong>Synthesis &amp; Electrode Fabrication:</strong> Synthesized molybdenum-based metal-organic frameworks (Mo-MOFs) integrated with NiCo-layered double hydroxide (Mo-MOF/P@NiCo-LDH) heterostructures directly on porous 3D nickel foam (NF) and carbon cloth via controlled solvothermal and hydrothermal crystallization across 50+ synthesis batches.</li>
+            <li><strong>Electrochemical Benchmarking:</strong> Evaluated in a standard three-electrode cell across 120+ datasets. Achieved ultra-low overpotentials of <strong>92 mV (HER)</strong> and <strong>106 mV (OER)</strong>, driving overall water splitting at a cell voltage of just <strong>1.58 V</strong>.</li>
+            <li><strong>Long-Term Stability &amp; Kinetics:</strong> Maintained <strong>97% current retention over 100 hours</strong> of continuous chronoamperometric operation. Extracted Tafel slopes, double-layer capacitance (ECSA), and charge-transfer resistance (Rct) via Nyquist EIS fitting in OriginLab.</li>
+            <li><strong>Structural Characterization:</strong> Correlated active site density and rapid electron transport with crystallinity, functional groups, and porous morphology verified via XRD, FTIR, and SEM/EDX elemental mapping.</li>
+            <li><strong>Manuscript in Preparation:</strong> Rahaman, A., &amp; Hasan, M. R. <em>"Mo-MOF and Transition Metal Layered Double Hydroxide Heterostructures as Highly Efficient Bifunctional Electrocatalysts for Overall Water Splitting."</em> (Target submission: 2026).</li>
+          </ul>
+        `
+      },
+      tici: {
+        tag: 'Industrial Training • TICI Narsingdi (Aug – Sep 2025)',
+        title: 'Pilot-Scale Unit Operations, Process Control & Bench-to-Industrial Scale-Up',
+        meta: 'Training Institute for Chemical Industries (TICI) • Course Grade: A+',
+        body: `
+          <p><strong>Scope:</strong> Intensive hands-on industrial training bridging bench-scale chemical engineering theory with pilot-plant unit operations and process control instrumentation.</p>
+          <ul class="list-disc list-inside space-y-1.5 mt-2">
+            <li><strong>Unit Operations Managed:</strong> Operated and monitored 4 pilot-scale process units including continuous chemical reactors, fractional distillation columns, and shell-and-tube heat exchangers.</li>
+            <li><strong>Process Control &amp; Validation:</strong> Monitored and logged 7 critical process parameters (temperature, pressure, flow rate, liquid level, reflux ratio, and process validation indicators) to evaluate scaling dynamics and equipment durability.</li>
+            <li><strong>HSE &amp; Quality Compliance:</strong> Executed all startup, steady-state, and shutdown trials in strict alignment with <strong>ISO 45001</strong> occupational health and safety protocols, <strong>ISO 9000</strong> quality management standards, and standard operating procedures (SOPs).</li>
+          </ul>
+        `
+      },
+      sodium: {
+        tag: 'Independent Research • Clean Energy Storage (2026)',
+        title: 'Solid-State Sodium-Ion Batteries for Grid-Scale Storage: Materials Selection & Interface Bottlenecks',
+        meta: 'Conceptual & Literature Synthesis • Next-Generation Grid Storage',
+        body: `
+          <p><strong>Scope:</strong> Comprehensive technical evaluation of solid-state sodium-ion batteries (SS-SIBs) as a sustainable, lithium-free alternative for stationary grid storage.</p>
+          <ul class="list-disc list-inside space-y-1.5 mt-2">
+            <li><strong>Materials Trade-Off Analysis:</strong> Benchmarked NASICON-type <code class="font-mono text-xs">Na3V2(PO4)3</code> (NVP) and Prussian blue analogue cathodes against doped NASICON solid electrolytes and hard carbon anodes.</li>
+            <li><strong>Interfacial Failure Mechanisms:</strong> Investigated chemo-mechanical contact loss, grain-boundary resistance, sodium dendrite propagation, and room-temperature ionic conductivity bottlenecks.</li>
+            <li><strong>Research Proposal Output:</strong> Formulated a research proposal centered on interfacial wetting layers and artificial solid-electrolyte interphase (SEI) engineering for long-cycle grid storage.</li>
+          </ul>
+        `
+      },
+      commercial: {
+        tag: '1st Place Winner • Industrial Process Innovation (June 2025)',
+        title: 'Scalable, Non-Noble Electrocatalyst Manufacturing Route & Techno-Economic Strategy',
+        meta: '3rd International Seminar on Frontiers in Chemical Engineering & Leadership Management, JUST',
+        body: `
+          <p><strong>Achievement:</strong> Secured <strong>1st Position out of 7 competing teams</strong> for pitching a commercially viable, sustainably sourced catalyst manufacturing route.</p>
+          <ul class="list-disc list-inside space-y-1.5 mt-2">
+            <li><strong>80% Raw Material Cost Reduction:</strong> Replaced precious platinum-group metals with earth-abundant molybdenum, nickel, and cobalt precursors on commercial nickel foam, cutting projected raw material cost by 80%.</li>
+            <li><strong>Process Optimization:</strong> Designed a scalable batch solvothermal synthesis schedule that maximizes precursor utilization and minimizes solvent waste for industrial hydrogen electrolyzer supply chains.</li>
+          </ul>
+        `
+      }
+    };
+
+    const BENCHMARK_METRICS = {
+      overpotential: {
+        unit: 'mV (Lower is better)',
+        note: 'Measured in 1.0 M KOH alkaline electrolyte; Mo-MOF/P@NiCo-LDH/NF delivers low activation barriers for both HER (92 mV) and OER (106 mV).',
+        items: [
+          { name: 'Mo-MOF/P@NiCo-LDH/NF (HER @ 10 mA/cm²)', val: 92, max: 350, color: 'bg-emerald-600' },
+          { name: 'Mo-MOF/P@NiCo-LDH/NF (OER @ 10 mA/cm²)', val: 106, max: 350, color: 'bg-teal-600' },
+          { name: 'Conventional RuO2 Benchmark (OER)', val: 165, max: 350, color: 'bg-slate-500' },
+          { name: 'Bare Nickel Foam Substrate (OER)', val: 310, max: 350, color: 'bg-slate-400' }
+        ]
+      },
+      stability: {
+        unit: '% Current Retention after 100 Hours (Higher is better)',
+        note: 'Continuous overall water splitting at 1.58 V cell voltage over 100 hours via chronoamperometry.',
+        items: [
+          { name: 'Mo-MOF/P@NiCo-LDH/NF Heterostructure', val: 97, max: 100, color: 'bg-emerald-600' },
+          { name: 'Unmodified NiCo-LDH / NF', val: 84, max: 100, color: 'bg-teal-600' },
+          { name: 'Commercial Pt/C || RuO2 Pair (24–100h drift)', val: 78, max: 100, color: 'bg-slate-500' }
+        ]
+      },
+      cost: {
+        unit: 'Relative Raw Material Cost Index (Lower is better, Benchmark = 100)',
+        note: 'Techno-economic raw material comparison presented at the 2025 JUST Chemical Engineering Seminar (1st Place Award).',
+        items: [
+          { name: 'Mo-MOF/P@NiCo-LDH/NF Route (-80% Cost Cut)', val: 20, max: 100, color: 'bg-emerald-600' },
+          { name: 'Transition Metal Oxide Baseline', val: 38, max: 100, color: 'bg-amber-500' },
+          { name: 'Conventional Noble-Metal Benchmark (Pt/C + RuO2)', val: 100, max: 100, color: 'bg-slate-500' }
+        ]
+      }
+    };
+
+    const CV_TEMPLATES = {
+      unified: {
+        subtitle: 'Chemical Engineering Graduate — Clean Energy R&D, Process Operations & Commercial Strategy',
+        summary: 'Detail-oriented Chemical Engineering graduate from Jashore University of Science and Technology (CGPA 3.51/4.00, Top 10%) combining 50+ laboratory synthesis batches and 120+ electrochemical datasets at NAME Lab with pilot-scale unit operations at TICI (A+ Grade) and accredited ISO 45001, HSE, and 5S certifications. Proven ability to bridge bench-top electrocatalysis research (80% catalyst cost reduction, 1st Place Innovation Award) with industrial plant safety and commercial execution.',
+        focusBullets: [
+          '<strong>Undergraduate Thesis (NAME Lab, JUST | 2025–2026):</strong> Formulated Mo-MOF/P@NiCo-LDH/NF bifunctional electrocatalysts achieving 92/106 mV overpotentials, 97% stability over 100 h at 1.58 V, and 80% lower projected raw material cost. Working paper in preparation with Dr. Md. Rafiul Hasan.',
+          '<strong>Independent Battery Research (2026):</strong> Evaluated NVP/Prussian blue cathodes and doped NASICON solid electrolytes for grid-scale solid-state sodium-ion batteries, proposing SEI stabilization strategies.',
+          '<strong>Process Control Trainee (TICI Narsingdi | Aug–Sep 2025):</strong> Operated 4 pilot-scale unit operations (continuous reactors, distillation columns, heat exchangers) and monitored 7 critical control parameters under ISO 45001 safety protocols (Grade: A+).',
+          '<strong>Honors:</strong> 1st Place (of 7 projects), Research Idea Contest — 3rd International Seminar on Frontiers in Chemical Engineering &amp; Leadership Management, JUST (June 2025); Merit-Based Undergraduate Scholarship (2022–2026).'
+        ]
+      },
+      academic: {
+        subtitle: 'B.Sc. in Chemical Engineering — Electrocatalysis, Water Splitting & Next-Gen Energy Storage Researcher',
+        summary: 'Undergraduate researcher ranked in the top 10% of the Chemical Engineering cohort at JUST (CGPA 3.51/4.00). Experienced in hydrothermal/solvothermal synthesis of MOF/LDH nanostructures, three-electrode cell fabrication, and kinetic modeling (LSV, CV, EIS, Tafel, ECSA) across 120+ datasets, with research interests spanning green hydrogen water splitting and solid-state sodium-ion batteries.',
+        focusBullets: [
+          '<strong>B.Sc. Thesis Research (2025–2026):</strong> <em>"Design and Fabrication of Mo-MOF Based Bifunctional Electrocatalysts for Efficient Overall Water Splitting"</em> (Supervisor: Dr. Md. Rafiul Hasan). Synthesized 50+ material batches; correlated XRD, FTIR, and SEM/EDX structural data with HER/OER kinetics (92/106 mV overpotential, 97% retention over 100 h at 1.58 V).',
+          '<strong>Manuscript in Preparation:</strong> Rahaman, A., &amp; Hasan, M. R. <em>"Mo-MOF and Transition Metal Layered Double Hydroxide Heterostructures as Highly Efficient Bifunctional Electrocatalysts for Overall Water Splitting"</em> (Target submission: 2026).',
+          '<strong>Independent Research (2026):</strong> <em>"Solid-State Sodium-Ion Batteries for Grid-Scale Storage: Materials Selection &amp; Interface Bottlenecks"</em> — analyzed NASICON electrolytes, NVP cathodes, and dendrite suppression.',
+          '<strong>Specialized Training:</strong> Battery Technologies Specialization (Arizona State University, Aug 2026, ID: CNSSHT4Z12EV); Next-Gen Energy Storage: Battery &amp; Hydrogen Tech (L&amp;T EduTech, Jun 2026, ID: BRELEQOVWV00); AI for Research and Insights (Google, Jun 2026).'
+        ]
+      },
+      industrial: {
+        subtitle: 'Chemical Engineering Graduate — Plant Operations, Process Control, QA/QC & HSE Specialist',
+        summary: 'Safety-minded, data-driven Chemical Engineering graduate with hands-on exposure to pilot-scale unit operations at TICI and multi-setup laboratory execution at JUST. Backed by ISO 45001, Khalifa University HSE, and AIGPE 5S certifications, ready to contribute immediately to production, process control, QA/QC, and EHS teams.',
+        focusBullets: [
+          '<strong>Process Control Trainee (TICI, Narsingdi | Aug–Sep 2025):</strong> Monitored and operated 4 pilot-scale unit operations (continuous reactors, distillation columns, heat exchangers), logging 7 critical parameters for process validation and troubleshooting (Grade: A+).',
+          '<strong>Undergraduate Research Assistant (NAME Lab, JUST | Jan 2025–Apr 2026):</strong> Managed 5 concurrent experimental setups and 50+ synthesis batches in strict compliance with chemical handling, SDS/MSDS, and safety protocols; analyzed 120+ datasets for quality documentation.',
+          '<strong>Safety &amp; Quality Certifications:</strong> HSE Engineering (Khalifa University, ID: QXRII2I5RIQR); ISO 45001 Occupational Health &amp; Safety (Packt, ID: YIBWEQFBTA4Q); AIGPE Certified 5S Specialist (ID: 56977272597623); Industrial Process Unit Operation &amp; Process Control (TICI).'
+        ]
+      },
+      commercial: {
+        subtitle: 'Chemical Engineering Graduate — Technical Sales, Sourcing & Chemical Business Development',
+        summary: 'Commercially minded Chemical Engineering graduate combining practical process and formulation fluency with strong communication, negotiation, and relationship-building skills. Proven ability to align technical product advantages with cost efficiency—demonstrated by winning 1st Place in Industrial Process Innovation for an 80% cost-reduced catalyst manufacturing route.',
+        focusBullets: [
+          '<strong>1st Place Award — Industrial Process Innovation (JUST Seminar | June 2025):</strong> Engineered a scalable manufacturing strategy for non-noble electrocatalysts that cut projected raw material costs by 80% while sustaining 97% operational durability over 100 hours.',
+          '<strong>Technical &amp; Supply Chain Readiness:</strong> Skilled in raw material testing, COA/SOP documentation, techno-economic evaluation, market research, and translating complex chemical specifications for commercial clients.',
+          '<strong>Leadership &amp; Communication:</strong> Team Captain of the Department Football Club (2024–2026), Assistant Class Representative (2025–2026), and Executive Member of the Anti-Ragging Society (2024–2025) at JUST.'
+        ]
+      }
+    };
+
+    // --- Helper: Show Toast ---
+    function showToast(message) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-emerald-600 text-white text-xs sm:text-sm font-medium shadow-lg border border-slate-700 transition-all duration-300 pointer-events-auto';
+      toast.textContent = message;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 300);
+      }, 2600);
+    }
+
+    // --- Helper: Copy Text Safely ---
+    function copyTextToClipboard(text, label) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast('Copied ' + (label || text) + ' to clipboard');
+        }).catch(() => fallbackCopy(text, label));
+      } else {
+        fallbackCopy(text, label);
+      }
+    }
+
+    function fallbackCopy(text, label) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast('Copied ' + (label || text) + ' to clipboard');
+      } catch (err) {
+        showToast('Copy ready: ' + text);
+      }
+      ta.remove();
+    }
+
+    // --- Render Benchmark Bars ---
+    function renderBenchmark(metricKey) {
+      const data = BENCHMARK_METRICS[metricKey];
+      const container = document.getElementById('benchmark-bars');
+      if (!data || !container) return;
+
+      let html = `<div class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-3">${data.unit} — ${data.note}</div>`;
+      data.items.forEach(item => {
+        const pct = Math.min(100, Math.round((item.val / item.max) * 100));
+        html += `
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200">
+              <span>${item.name}</span>
+              <span class="font-mono font-bold">${item.val}${metricKey === 'stability' ? '%' : metricKey === 'overpotential' ? ' mV' : ''}</span>
+            </div>
+            <div class="w-full h-3 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+              <div class="${item.color} h-full rounded-full transition-all duration-500" style="width: ${pct}%"></div>
+            </div>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    }
+
+    // --- Filter Projects ---
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      document.querySelectorAll('.proj-tab-btn').forEach(btn => {
+        const active = btn.getAttribute('data-proj-filter') === category;
+        btn.className = active
+          ? 'proj-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-sm'
+          : 'proj-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900';
+      });
+    }
+
+    // --- Apply Portfolio Lens ---
+    function applyLens(lensKey) {
+      const lens = LENS_DATA[lensKey] || LENS_DATA.unified;
+      document.getElementById('active-lens-label').textContent = lens.label;
+      document.getElementById('hero-badge-text').textContent = lens.badge;
+      document.getElementById('hero-subtitle').textContent = lens.subtitle;
+      document.getElementById('hero-description').textContent = lens.description;
+
+      document.querySelectorAll('.lens-btn').forEach(btn => {
+        const isCurrent = btn.getAttribute('data-lens') === lensKey;
+        btn.className = isCurrent
+          ? 'lens-btn px-2.5 py-1 rounded-md font-medium transition-all bg-emerald-600 text-white shadow-sm'
+          : 'lens-btn px-2.5 py-1 rounded-md font-medium transition-all bg-slate-800/80 text-slate-300 hover:bg-slate-700';
+      });
+
+      filterProjects(lens.projFilter);
+      showToast('Switched view lens to: ' + lens.label);
+    }
+
+    // --- Render Printable CV Sheet ---
+    let currentCvVersion = 'unified';
+    function renderCvSheet(versionKey) {
+      currentCvVersion = versionKey;
+      const tpl = CV_TEMPLATES[versionKey] || CV_TEMPLATES.unified;
+      document.getElementById('cv-sheet-subtitle').textContent = tpl.subtitle;
+
+      const bodyEl = document.getElementById('cv-sheet-body');
+      bodyEl.innerHTML = `
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Executive Profile</h3>
+          <p>${tpl.summary}</p>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Selected Highlights (${versionKey.toUpperCase()} FOCUS)</h3>
+          <ul class="list-disc list-inside space-y-1.5">
+            ${tpl.focusBullets.map(b => `<li>${b}</li>`).join('')}
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Education</h3>
+            <p class="font-bold">B.Sc. in Chemical Engineering (2022 – 2026)</p>
+            <p>Jashore University of Science and Technology (JUST)</p>
+            <p class="text-slate-600">CGPA: 3.51 / 4.00 (Ranked Top 10% • Merit Scholarship)</p>
+            <p class="font-bold mt-2">Higher Secondary Certificate — Science (2018 – 2020)</p>
+            <p>Govt. Michael Madhusudan College, Jashore | GPA: 5.00 / 5.00</p>
+          </div>
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Key Certifications</h3>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Battery Technologies Specialization — Arizona State Univ. (ID: CNSSHT4Z12EV)</li>
+              <li>HSE Engineering — Khalifa University (ID: QXRII2I5RIQR)</li>
+              <li>ISO 45001 Occupational Health &amp; Safety — Packt (ID: YIBWEQFBTA4Q)</li>
+              <li>AIGPE™ Certified 5S Specialist (ID: 56977272597623)</li>
+              <li>Next-Gen Energy Storage (Battery &amp; H2) — L&amp;T EduTech (ID: BRELEQOVWV00)</li>
+              <li>Industrial Process Control &amp; Unit Ops — TICI (Grade: A+)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 border-b border-slate-300 pb-1 mb-2">Academic References</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <p class="font-bold">Dr. Md. Rafiul Hasan (Thesis Supervisor)</p>
+              <p>Associate Professor, Dept. of Chemical Engineering, JUST</p>
+              <p class="font-mono text-xs">Email: rafiul.che@just.edu.bd</p>
+            </div>
+            <div>
+              <p class="font-bold">Dr. Md. Zaved Hossain Khan (Dept. Chairman &amp; Mentor)</p>
+              <p>Professor &amp; Chairman, Dept. of Chemical Engineering, JUST</p>
+              <p class="font-mono text-xs">Email: zaved.khan@yahoo.com</p>
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.querySelectorAll('.cv-ver-btn').forEach(btn => {
+        const active = btn.getAttribute('data-cv-version') === versionKey;
+        btn.className = active
+          ? 'cv-ver-btn px-3 py-1 rounded-lg text-xs font-semibold bg-oxford-800 text-white dark:bg-emerald-600'
+          : 'cv-ver-btn px-3 py-1 rounded-lg text-xs font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300';
+      });
+    }
+
+    // --- Initialize Event Listeners ---
+    window.addEventListener('DOMContentLoaded', () => {
+      // Initial renders
+      renderBenchmark('overpotential');
+      renderCvSheet('unified');
+
+      // Theme initialization
+      try {
+        const savedTheme = localStorage.getItem('arafat_portfolio_theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+
+      // Theme toggle
+      document.getElementById('theme-toggle-btn').addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        try {
+          localStorage.setItem('arafat_portfolio_theme', isDark ? 'dark' : 'light');
+        } catch (e) {}
+        showToast(isDark ? 'Switched to Dark Slate theme' : 'Switched to Academic Light theme');
+      });
+
+      // Mobile menu toggle
+      const mobileMenu = document.getElementById('mobile-menu');
+      document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+
+      // Lens buttons
+      document.querySelectorAll('.lens-btn').forEach(btn => {
+        btn.addEventListener('click', () => applyLens(btn.getAttribute('data-lens')));
+      });
+
+      // Project filter tabs
+      document.querySelectorAll('.proj-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => filterProjects(btn.getAttribute('data-proj-filter')));
+      });
+
+      // Benchmark metric buttons
+      document.querySelectorAll('.metric-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const metric = btn.getAttribute('data-metric');
+          renderBenchmark(metric);
+          document.querySelectorAll('.metric-btn').forEach(b => {
+            const active = b.getAttribute('data-metric') === metric;
+            b.className = active
+              ? 'metric-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-oxford-800 text-white dark:bg-emerald-600'
+              : 'metric-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300';
+          });
+        });
+      });
+
+      // Timeline filter tabs
+      document.querySelectorAll('.timeline-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cat = btn.getAttribute('data-timeline-filter');
+          document.querySelectorAll('.timeline-item').forEach(item => {
+            if (cat === 'all' || item.getAttribute('data-tcat') === cat) {
+              item.classList.remove('hidden');
+            } else {
+              item.classList.add('hidden');
+            }
+          });
+          document.querySelectorAll('.timeline-tab-btn').forEach(b => {
+            const active = b.getAttribute('data-timeline-filter') === cat;
+            b.className = active
+              ? 'timeline-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-oxford-800 text-white dark:bg-emerald-600'
+              : 'timeline-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300';
+          });
+        });
+      });
+
+      // Copy triggers
+      document.querySelectorAll('.copy-trigger').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const val = btn.getAttribute('data-copy');
+          copyTextToClipboard(val, val);
+        });
+      });
+
+      // Project Detail Modal
+      const projModal = document.getElementById('project-modal');
+      document.querySelectorAll('.open-project-modal').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-project-id');
+          const d = PROJECT_DETAILS[id];
+          if (!d) return;
+          document.getElementById('modal-proj-tag').textContent = d.tag;
+          document.getElementById('modal-proj-title').textContent = d.title;
+          document.getElementById('modal-proj-meta').textContent = d.meta;
+          document.getElementById('modal-proj-body').innerHTML = d.body;
+          projModal.classList.remove('hidden');
+        });
+      });
+      const closeProjModal = () => projModal.classList.add('hidden');
+      document.getElementById('close-project-modal').addEventListener('click', closeProjModal);
+      document.getElementById('close-project-modal-bottom').addEventListener('click', closeProjModal);
+      projModal.addEventListener('click', (e) => {
+        if (e.target === projModal) closeProjModal();
+      });
+
+      // CV Modal
+      const cvModal = document.getElementById('cv-modal');
+      const openCvModal = () => cvModal.classList.remove('hidden');
+      const closeCvModal = () => cvModal.classList.add('hidden');
+      document.getElementById('open-cv-btn').addEventListener('click', openCvModal);
+      document.getElementById('hero-cv-btn').addEventListener('click', openCvModal);
+      document.getElementById('footer-cv-btn').addEventListener('click', openCvModal);
+      document.getElementById('close-cv-modal').addEventListener('click', closeCvModal);
+      cvModal.addEventListener('click', (e) => {
+        if (e.target === cvModal) closeCvModal();
+      });
+
+      document.querySelectorAll('.cv-ver-btn').forEach(btn => {
+        btn.addEventListener('click', () => renderCvSheet(btn.getAttribute('data-cv-version')));
+      });
+
+      document.getElementById('print-cv-btn').addEventListener('click', () => {
+        window.print();
+      });
+
+      document.getElementById('copy-cv-text-btn').addEventListener('click', () => {
+        const text = document.getElementById('cv-print-area').innerText;
+        copyTextToClipboard(text, 'formatted CV text');
+      });
+
+      // Contact Form & Inquiry Composer
+      const inquirySelect = document.getElementById('inquiry-track');
+      const inquiryMessage = document.getElementById('inquiry-message');
+      inquirySelect.addEventListener('change', () => {
+        const val = inquirySelect.value;
+        if (val.includes('Graduate Research')) {
+          inquiryMessage.value = 'Dear Arafat, I reviewed your electrocatalysis thesis on Mo-MOF/P@NiCo-LDH water splitting and solid-state sodium-ion battery research, and would like to discuss graduate research opportunities in our lab.';
+        } else if (val.includes('Process')) {
+          inquiryMessage.value = 'Dear Arafat, We were impressed by your TICI pilot-plant training and ISO 45001 / HSE / 5S credentials, and would like to speak with you regarding an engineering role on our operations team.';
+        } else if (val.includes('Commercial')) {
+          inquiryMessage.value = 'Dear Arafat, Your combination of Chemical Engineering expertise and commercial process optimization caught our attention. We would love to discuss a Management Trainee / Business Development opportunity.';
+        } else {
+          inquiryMessage.value = 'Hi Arafat, I reviewed your Chemical Engineering portfolio and would love to connect regarding a potential collaboration.';
+        }
+      });
+
+      document.getElementById('contact-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const sender = document.getElementById('sender-name').value.trim() || 'Prospective Contact';
+        const track = inquirySelect.value;
+        const msg = inquiryMessage.value.trim();
+        const subject = encodeURIComponent(`[Portfolio Inquiry] ${track} — from ${sender}`);
+        const body = encodeURIComponent(`${msg}\n\nBest regards,\n${sender}`);
+        window.location.href = `mailto:arafat.che12@gmail.com?subject=${subject}&body=${body}`;
+        showToast('Opening email client addressed to arafat.che12@gmail.com');
+      });
+
+      document.getElementById('copy-inquiry-btn').addEventListener('click', () => {
+        const sender = document.getElementById('sender-name').value.trim() || 'Prospective Contact';
+        const track = inquirySelect.value;
+        const msg = inquiryMessage.value.trim();
+        const full = `To: arafat.che12@gmail.com\nSubject: [Portfolio Inquiry] ${track} — from ${sender}\n\n${msg}\n\nBest regards,\n${sender}`;
+        copyTextToClipboard(full, 'inquiry message');
+      });
+    });
+  </script>
+</body>
+</html>
