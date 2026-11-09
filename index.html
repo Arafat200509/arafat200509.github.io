@@ -541,7 +541,7 @@
   <footer class="bg-oxford-950 text-slate-400 py-8 border-t border-slate-800 text-xs no-print">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        <span id="footer-name" class="font-academic font-bold text-white text-sm">Arafat Rahaman</span> — Hosted on GitHub Pages (<a id="footer-repo-link" href="https://github.com/arafat200509/arafat200509.github.io" target="_blank" rel="noopener noreferrer" class="font-mono text-emerald-400 hover:underline">arafat200509.github.io</a>)
+        <span id="footer-name" class="font-academic font-bold text-white text-sm">Arafat Rahaman</span> — <span id="footer-subtitle-text" class="text-slate-400">B.Sc. in Chemical Engineering (JUST)</span>
       </div>
       <div class="flex flex-wrap items-center gap-4">
         <a href="#overview" class="hover:text-white transition-colors">Top</a>
@@ -1722,15 +1722,26 @@ window.DEFAULT_PORTFOLIO_DATA = {
   <script>
     const STORAGE_KEY = 'arafat_unified_portfolio_v2';
 
+    const DEFAULT_SYNC_KEY = "arafat_unified_portfolio_default_sig_v2";
+    function getDefaultSignature() {
+      try {
+        return JSON.stringify(window.DEFAULT_PORTFOLIO_DATA).length + ":" + (window.DEFAULT_PORTFOLIO_DATA.documents ? window.DEFAULT_PORTFOLIO_DATA.documents.length : 0);
+      } catch (e) {
+        return "0";
+      }
+    }
     function loadInitialState() {
       try {
+        const currentSig = getDefaultSignature();
+        const savedSig = localStorage.getItem(DEFAULT_SYNC_KEY);
         const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved) {
+        if (saved && savedSig === currentSig) {
           const parsed = JSON.parse(saved);
           if (parsed && parsed.profile && parsed.documents && parsed.projects) {
             return parsed;
           }
         }
+        localStorage.setItem(DEFAULT_SYNC_KEY, currentSig);
       } catch (e) {}
       return JSON.parse(JSON.stringify(window.DEFAULT_PORTFOLIO_DATA));
     }
@@ -1746,6 +1757,7 @@ window.DEFAULT_PORTFOLIO_DATA = {
     function saveState() {
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        localStorage.setItem(DEFAULT_SYNC_KEY, getDefaultSignature());
       } catch (e) {}
     }
 
@@ -1884,11 +1896,7 @@ window.DEFAULT_PORTFOLIO_DATA = {
       }
 
       document.getElementById('footer-name').textContent = p.name;
-      const repoLink = document.getElementById('footer-repo-link');
-      if (repoLink) {
-        repoLink.href = p.githubRepoUrl || 'https://github.com/arafat200509/arafat200509.github.io';
-        repoLink.textContent = p.githubPages || 'arafat200509.github.io';
-      }
+
 
       bindCopyTriggers();
     }
